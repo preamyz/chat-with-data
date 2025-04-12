@@ -24,7 +24,6 @@ except Exception as e:
 
 # Set up the Streamlit app layout
 st.title("My Chatbot and Data Analysis App")
-st.subheader("Upload CSV file and data dictionary for Analysis")
 
 # Initialize session state
 if "chat_history" not in st.session_state:
@@ -83,9 +82,6 @@ if dict_file is not None:
         st.session_state.data_context += f"\n\nData Dictionary:\n{dict_info}"
     except Exception as e:
         st.error(f"An error occurred while reading the data dictionary file: {e}")
-
-# Analyze checkbox
-analyze_data_checkbox = st.checkbox("Analyze CSV Data with AI")
 
 # Show chat history BELOW the checkbox
 for role, message in st.session_state.chat_history:
